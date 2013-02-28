@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Portal.Models.RecipeModels>
+
+@{
+    ViewBag.Title = "Przepisy";
+}
+
+<h2>Przepisy</h2>
+
+<p class="submitBtn">
+    @Html.ActionLink("Dodaj nowy przepis", "Create", routeValues: null, htmlAttributes: new { @class = "not-underline"})
+</p>
+
+<div id="przepisy-menu-left">
+    @foreach (var item in Model)
+    {
+        <div id="przepisy-menu-left-item">
+            <p class="autor"><span class="title">@Html.DisplayNameFor(model => model.Autor):</span> @Html.DisplayFor(modelItem => item.Autor)</p>
+            <p class="nazwa"><span class="title">@Html.DisplayNameFor(model => model.NazwaPrzepis):</span> @Html.DisplayFor(modelItem => item.NazwaPrzepis).ToString()<br />@Html.ActionLink("Zobacz przepis", "Details", new { id=item.ID }, new {@id="viewRecipeBtn",data_icon="gear"})<br>
+            <span class="title">@Html.ActionLink("Edytuj", "Edit", new { id=item.ID }) | @Html.ActionLink("Usuń", "Delete", new { id = item.ID })</span></p>
+            <p class="data-dodania"><span class="title">@Html.DisplayNameFor(model => model.DataDodania):</span> @Html.DisplayFor(modelItem => item.DataDodania)</p>
+        </div>
+    }
+</div>
+   
+<div class="clear"></div>

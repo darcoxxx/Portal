@@ -1,0 +1,17 @@
+﻿    <div id="footer-style">
+        
+        <div id="footer-menu">
+            <ul>
+               <li>@Html.ActionLink("Strona główna", "Index", "Home", routeValues: null, htmlAttributes: new { @class = "not-underline"})</li>
+               <li>@Html.ActionLink("Przepisy", "Przepisy", "Home", routeValues: null, htmlAttributes: new { @class = "not-underline"})</li>
+               <li>@Html.ActionLink("Forum", "Forum", "Home", routeValues: null, htmlAttributes: new { @class = "not-underline"})</li>
+               <li>@Html.ActionLink("Informacje", "About", "Home", routeValues: null, htmlAttributes: new { @class = "not-underline"})</li>
+               <li>@Html.ActionLink("Kontakt", "Contact", "Home", routeValues: null, htmlAttributes: new { @class = "not-underline"})</li>
+            </ul>
+        </div>
+        
+        <div id="licznik">Odwiedziło nas <span><i>1024</i></span> osób(y)</div>
+
+        <p> Portal Darco @DateTime.Now.Year — &copy; Web#Darco<br/>
+            Platforma  ASP.NET MVC 4.5</p>
+    </div>               

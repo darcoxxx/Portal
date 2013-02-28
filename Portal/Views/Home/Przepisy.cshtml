@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Przepisy";
+}
+
+<hgroup class="title">
+    <h1>-> @ViewBag.Title <-</h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+
+<div class="buttons">
+    <li>@Html.ActionLink("Kliknij aby zobaczyć przepisy", "Index", "Recipe", routeValues: null, htmlAttributes: new { @class = "not-underline"})</li>
+</div>
+
+<p class="clear" style="padding-top: 20px;">Stąd będę przekierowywał na stronę z przepisami (dodam nowy kontroler <b>Przepisy</b>)</p>

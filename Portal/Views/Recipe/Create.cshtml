@@ -1,0 +1,59 @@
+﻿@model Portal.Models.RecipeModels
+
+@{
+    ViewBag.Title = "Dodaj przepis";
+}
+
+<h2>Dodaj przepis</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Dodawanie Przepisu</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NazwaPrzepis)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NazwaPrzepis)
+            @Html.ValidationMessageFor(model => model.NazwaPrzepis)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Kategoria)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Kategoria)
+            @Html.ValidationMessageFor(model => model.Kategoria)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Skladniki)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Skladniki)
+            @Html.ValidationMessageFor(model => model.Skladniki)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Wykonanie)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Wykonanie)
+            @Html.ValidationMessageFor(model => model.Wykonanie)
+        </div>
+
+        <p class="submitBtn">
+            <input type="submit" value="Dodaj przepis" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Powrót do listy", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

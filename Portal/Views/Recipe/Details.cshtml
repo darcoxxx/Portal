@@ -1,0 +1,28 @@
+﻿@model Portal.Models.RecipeModels
+
+@{
+    ViewBag.Title = "Sporządzenie przepisu";
+}
+
+<fieldset>
+    <legend style="font-size: 22px; font-weight:500;">Sporządzenie przepisu</legend>
+
+    <div align="center"><h1>@Html.DisplayFor(model => model.NazwaPrzepis)<h4>dodany przez: <span style="color:#808080">@Html.DisplayFor(model => model.Autor)</span>&nbsp;&nbsp;&nbsp; data dodania: <span style="color:#808080">@Html.DisplayFor(model => model.DataDodania)</span></h4></h1></div> 
+     
+    <div id="content-przepis">
+        <label>@Html.DisplayNameFor(model => model.Skladniki)</label>        
+        <div id="skladniki">
+            @Html.DisplayFor(model => model.Skladniki)
+        </div>
+        
+        <label>@Html.DisplayNameFor(model => model.Wykonanie)</label>
+        <div id="wykonanie">
+            @Html.DisplayFor(model => model.Wykonanie)
+    </div>
+        
+    </div> 
+</fieldset>
+<p>
+    @Html.ActionLink("Edytuj przepis", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Powrót do listy", "Index")
+</p>

@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+    <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title — Witryna autorstwa Darco</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css/css")
+        @Scripts.Render("~/bundles/modernizr")
+        <script src="~/Content/js/modGraf.js"></script>
+    </head>
+    <body>
+        <header>
+            <section id="logo">
+                <p>@Html.ActionLink("Darco Portal", "Index", "Home", routeValues: null, htmlAttributes: new {@class = "not-underline"})</p>
+            </section>
+
+            <section id="login">
+                 @Html.Partial("_LoginPartial")
+            </section>
+        </header>
+            <div id="wrapper">
+                <section id="menu" class="menu">
+                    <ul>
+                        <li>@Html.ActionLink("Strona główna", "Index", "Home", routeValues: null, htmlAttributes: new { @class = "not-underline"})</li>
+                        <li>@Html.ActionLink("Przepisy", "Przepisy", "Home", routeValues: null, htmlAttributes: new { @class = "not-underline"})</li>
+                        <li>@Html.ActionLink("Forum", "Forum", "Home", routeValues: null, htmlAttributes: new { @class = "not-underline"})</li>
+                        <li>@Html.ActionLink("Informacje", "About", "Home", routeValues: null, htmlAttributes: new { @class = "not-underline"})</li>
+                        <li>@Html.ActionLink("Kontakt", "Contact", "Home", routeValues: null, htmlAttributes: new { @class = "not-underline"})</li>
+                    </ul>
+                </section>
+                
+                <section id="social">
+                    <ul>
+                        <li><a href="#"><img src="~/Images/social_buttons/facebook.png" /></a></li>
+                        @*<li><a href="#"><img src="~/Images/social_buttons/amazon.png" /></a></li>
+                        <li><a href="#"><img src="~/Images/social_buttons/apple.png" /></a></li>
+                        <li><a href="#"><img src="~/Images/social_buttons/delicious.png" /></a></li>
+                        <li><a href="#"><img src="~/Images/social_buttons/digg.png" /></a></li>*@
+                        <li><a href="#"><img src="~/Images/social_buttons/flickr.png" /></a></li>
+                        @*<li><a href="#"><img src="~/Images/social_buttons/myspace.png" /></a></li>
+                        <li><a href="#"><img src="~/Images/social_buttons/retweet.png" /></a></li>*@
+                        <li><a href="#"><img src="~/Images/social_buttons/rss.png" /></a></li>
+                        @*<li><a href="#"><img src="~/Images/social_buttons/technorati.png" /></a></li>*@
+                        <li><a href="#"><img src="~/Images/social_buttons/twitter.png" /></a></li>
+                        <li><a href="#"><img src="~/Images/social_buttons/yahoo.png" /></a></li>
+                    </ul>
+                </section>
+            </div>
+
+        <div id="content">
+                @RenderBody()
+        </div>
+
+        <footer>
+            @Html.Partial("_Footer")
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+
+    </body>
+</html>

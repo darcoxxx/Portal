@@ -1,0 +1,83 @@
+﻿@model Portal.Models.RecipeModels
+
+@{
+    ViewBag.Title = "Edytuj przepis";
+}
+
+<h2>Edytuj przepis</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Edycja przepisu</legend>
+
+        @Html.HiddenFor(model => model.ID)
+        
+        <div id="content-przepis" style="float: right;">
+        <label>@Html.DisplayNameFor(model => model.Skladniki)</label>        
+        <div id="skladniki">
+            @Html.TextAreaFor(model => model.Skladniki)
+            @Html.ValidationMessageFor(model => model.Skladniki)
+        </div>
+        
+        <label>@Html.DisplayNameFor(model => model.Wykonanie)</label>
+        <div id="wykonanie">
+            @Html.TextAreaFor(model => model.Wykonanie)
+            @Html.ValidationMessageFor(model => model.Wykonanie)
+        </div> 
+            </div>       
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NazwaPrzepis)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NazwaPrzepis)
+            @Html.ValidationMessageFor(model => model.NazwaPrzepis)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Autor)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Autor)
+            @Html.ValidationMessageFor(model => model.Autor)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Kategoria)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Kategoria)
+            @Html.ValidationMessageFor(model => model.Kategoria)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataDodania)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DataDodania)
+            @Html.ValidationMessageFor(model => model.DataDodania)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataModyfikacji)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DataModyfikacji)
+            @Html.ValidationMessageFor(model => model.DataModyfikacji)
+        </div>
+        
+        <p class="submitBtn">
+            <input type="submit" value="Zapisz" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Powrót do listy", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

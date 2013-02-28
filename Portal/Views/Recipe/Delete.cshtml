@@ -1,0 +1,46 @@
+﻿@model Portal.Models.RecipeModels
+
+@{
+    ViewBag.Title = "Usuń przepis";
+}
+
+<h2>Usuń przepis</h2>
+
+<h3>Jesteś pewien, że chcesz usunąć ten przepis?</h3>
+<fieldset>
+    <legend>Usuwanie przepisu</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NazwaPrzepis)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NazwaPrzepis)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Autor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Autor)
+    </div>
+ 
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataDodania)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataDodania)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataModyfikacji)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataModyfikacji)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p class="submitBtn">
+        <input type="submit" value="Usuń przepis" /> |
+        @Html.ActionLink("Powrót do listy", "Index")
+    </p>
+}
